@@ -255,9 +255,9 @@ header {
     height: auto;
 }
 
-header h1 {
+/*header h1 {
     margin: 0;
-}
+} */
 
 /*  Navigation Styles Mobile First */
 nav ul {
@@ -453,7 +453,7 @@ body > header nav a:focus {
     text-align: center;   
 } 
 
-/*  Shows Section  */
+/*  Shows Section  
 #shows {
     margin: 0 auto 0;
 }
@@ -513,8 +513,110 @@ body > header nav a:focus {
 
 #shows .show-tickets a:hover, #shows a:focus {
     transform: scale(1.1);
+} 
+
+/* Shows Section - Mobile NEW */
+#shows {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
 }
 
+#shows h2,
+#shows > p {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shows-feature-image {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 2rem auto 3rem;
+    border-radius: 18px;
+    box-shadow: var(--sm-shadow);
+}
+
+#shows .show-tickets {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+
+    border: 1px solid #333;
+    border-radius: 18px;
+    box-shadow: var(--sm-shadow);
+}
+
+#shows .show-tickets h3,
+#shows .show-tickets p {
+    text-align: center;
+    margin: 0;
+}
+
+#shows .show-tickets p {
+    font-size: 1.2rem;
+}
+
+#shows .show-tickets a {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#shows .show-tickets a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 6px 12px;
+    border: 2px solid #e3972b;
+    background-color: #ffbf47;
+    border-radius: 100px;
+    font-family: var(--heading-fonts);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dk-gray);
+    transition: all 400ms;
+    box-shadow: var(--lg-shadow);
+}
+
+#shows .show-tickets a:hover {
+    background: linear-gradient(
+        to bottom,
+        lime,
+        yellow,
+        rgb(219, 82, 210),
+        var(--heritage-red),
+        blue,
+        rgb(232, 152, 76)
+    );
+    color: white;
+    transform: scale(1.1);
+}
+
+.show-tickets {
+    background-color: rgba(22, 22, 22, 0.82);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.show-tickets:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
 
 /* Contact Section */
 #contact {
@@ -952,13 +1054,26 @@ footer {
 .copyright p {
     font-size: 1rem; 
     padding-bottom: 0;
-    padding-top: 3rem;
+    padding-top: 3rem; 
     color: white;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+    
+}
+
+.copyright a {
+    text-decoration: underline;
+}
+
+.copyright a:hover {
+    color: #e3972b;
+    transform: scale(1.5);
 }
 
 /* 768 and up */
 @media (min-width: 768px) {
-    header {
+  /*  header {
         gap: 1rem;
     }
 
@@ -974,14 +1089,15 @@ footer {
     .header-top img {
         width: 140px;
         height: auto;
+        align-items: center;
     }
 
-    .header-top h1 {
+   /* .header-top h1 {
         margin: 0;
         width: auto;
         height: auto; 
         white-space: nowrap;
-    }
+    } 
     
     nav {
         width: 80%;
@@ -1000,6 +1116,45 @@ footer {
     nav a { 
         min-width: 160px;
     }  
+
+    @media (min-width: 768px) { */
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-top img {
+        width: 140px;
+        height: auto;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 900px;
+    }
+
+    nav ul { 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav a { 
+        min-width: 160px;
+    }
+
 
     /* About Section */
     #about {
@@ -1046,7 +1201,7 @@ footer {
         max-width: none;
     } 
 
-    /* Shows Section */
+    /* Shows Section 
     #shows {
         padding: 66px 32px;
         display: grid;
@@ -1074,8 +1229,28 @@ footer {
     #shows h3, 
     #shows p  {
         grid-column: 1 / -1;   
-    } 
+    } */
 
+    /* Shows Section NEW to remove grid*/
+    #shows {
+        padding: 66px 32px;
+}
+
+    #shows .show-tickets {
+        grid-template-columns: 1.5fr 2fr auto;
+        align-items: center;
+        gap: 2rem;  
+}
+
+    #shows .show-tickets h3,
+    #shows .show-tickets p {    
+        text-align: left;
+}
+
+    #shows .show-tickets a {
+        justify-self: end;
+        white-space: nowrap;
+}
     /* Contact */
 
     #contact {
@@ -1237,9 +1412,9 @@ footer {
         flex-shrink: 0; 
     }
 
-    .header-top h1 {
+   /* .header-top h1 {
         width: auto;
-    } 
+    } */
 
     nav {
         justify-self: end;   
